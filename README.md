@@ -24,7 +24,7 @@ This is the ASP.NET web front end by using Razor Page to perform CRUD by calling
 ## How to Google Datastore
 
 1. Create Service Account
---------------------------
+
 account name: droid101
 role: Datastore -> cloud datastore owner
 
@@ -32,7 +32,7 @@ download private key in json format
 wm-nosql-a4fcc17e9390.json
 
 2. Control Panel > System > Advanced System Settings > Environment Variables
-----------------------------------------------------------------------------
+
 Set Variable
 Variable Name: GOOGLE_APPLICATION_CREDENTIALS
 Variable Value: C:\GCloudKey\wm-nosql-a4fcc17e9390.json
@@ -40,16 +40,16 @@ Variable Value: C:\GCloudKey\wm-nosql-a4fcc17e9390.json
 restart machine (very important)
 
 3.Configure GCloud
--------------------
+
 Powershell or Command Prompt
 
-gcloud config list
-gcloud auth login
-gcloud config set account <google account email>
-gcloud config set project <project name>
+- gcloud config list
+- gcloud auth login
+- gcloud config set account google account email
+- gcloud config set project project name
 
 4. Create Indexes and Deploy
-----------------------------
+
 Powershell
 > gcloud app deploy "C:\Users\user\Documents\visual studio 2017\Projects\WMNoSQL\WmNosql.Proxy\index.yaml"
 OR
@@ -57,6 +57,6 @@ OR
 
     
 If Delete Indexes
------------------
+
 Powershell
 > gcloud datastore cleanup-indexes "C:\Users\user\Documents\visual studio 2017\Projects\WMNoSQL\WmNosql.Proxy\index.yaml"
