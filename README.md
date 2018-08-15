@@ -25,8 +25,8 @@ This is the ASP.NET web front end by using Razor Page to perform CRUD by calling
 
 1. Create Service Account
 
-account name: droid101
-role: Datastore -> cloud datastore owner
+- account name: \*droid101\* (just example)
+- role: Datastore -> cloud datastore owner
 
 download private key in json format
 wm-nosql-a4fcc17e9390.json
