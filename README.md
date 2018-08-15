@@ -28,8 +28,8 @@ This is the ASP.NET web front end by using Razor Page to perform CRUD by calling
 - account name: \*droid101\* (just example)
 - role: Datastore -> cloud datastore owner
 
-download private key in json format
-wm-nosql-a4fcc17e9390.json
+Download json private key file keep it in any folder.
+i.e C:\GCloudKey\wm-nosql-a4fcc17e9390.json
 
 2. Control Panel > System > Advanced System Settings > Environment Variables
 
