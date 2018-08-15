@@ -1,0 +1,8 @@
+indexes:
+# Timestamp Ascending
+
+- kind: ItemMaster
+  ancestor: yes
+  properties:
+  - name: Timestamp
+

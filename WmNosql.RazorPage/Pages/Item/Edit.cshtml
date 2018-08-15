@@ -1,0 +1,45 @@
+﻿@page "{id:long}"
+@model WmNosql.RazorPage.Pages.Item.EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<blockquote>Edit Item</blockquote>
+<p> Edit Item (ID = @Model.Item.Id)</p>
+<div asp-validation-summary="All"></div>
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="POST">
+            <input type="hidden" asp-for="Item.Id" />
+            <label asp-for="Item.Code"></label>
+            <div class="form-group">
+                <input type="text" asp-for="Item.Code" class="form-control" placeholder="Item Code">
+            </div>
+
+            <label asp-for="Item.Description"></label>
+            <div class="form-group">
+                <input type="text" asp-for="Item.Description" class="form-control" placeholder="Item Description">
+            </div>
+
+            <label asp-for="Item.Brand"></label>
+            <div class="form-group">
+                <input type="text" asp-for="Item.Brand" class="form-control" placeholder="Item Brand">
+            </div>
+
+            <label asp-for="Item.Model"></label>
+            <div class="form-group">
+                <input type="text" asp-for="Item.Model" class="form-control" placeholder="Item Model">
+            </div>
+
+            <label asp-for="Item.BaseUOM">Base UOM</label>
+            <div class="form-group">
+                <input type="text" asp-for="Item.BaseUOM" class="form-control" placeholder="Base UOM">
+            </div>
+            <input class="btn btn-default" type="submit" />
+        </form>
+    </div>
+</div>
+
+
