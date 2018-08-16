@@ -1,6 +1,7 @@
 # ASP.NET Core 2.0 and Google Datastore (NoSQL)
 This project was created to serve one simple purpose.
 It is simply to demonstrate how to perform CRUD Google NoSQL Datastore with ASP.net Core 2.0.
+In fact, it is just more for my own reference for future works
 
 ## Language
 C#
@@ -9,16 +10,16 @@ C#
 Google Datastore
 https://cloud.google.com/datastore/docs/concepts/overview
 
-## Projects
-1. WmNosql.Proxy
+## Projects of the Solution
+1. __WmNosql.Proxy__
 Google Datastore being the database this application, we won't able to use Entity Framework or ADO.NET to interact retrieve and store data.
 Hence, I chose to create a proxy class for each table (it is called Kind in Google Datastore context).
 This project is the collection of all proxy classes that to be mapped into Datastore.
 
-2. WmNosql.Cmd
+2. __WmNosql.Cmd__
 This is just a command line program to invoke proxy classes merely for testing.
 
-3. WmNosql.RazorPage
+3. __WmNosql.RazorPage__
 This is the ASP.NET web front end by using Razor Page to perform CRUD by calling proxy classes.
 
 ## How to Google Datastore
@@ -41,10 +42,9 @@ restart machine (very important)
 
 3. Configure GCloud
 
-Powershell or Command Prompt
-
-- gcloud config list
-- gcloud auth login
+Use Powershell or Command Prompt of Windows.
+- gcloud config list (View current logged in accounts and default project in Google cloud)
+- gcloud auth login (Sign In to a Google account)
 - gcloud config set account \*google account email\*
 - gcloud config set project \*project name\*
 
