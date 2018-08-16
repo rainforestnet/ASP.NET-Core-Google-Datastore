@@ -22,41 +22,42 @@ This is just a command line program to invoke proxy classes merely for testing.
 3. __WmNosql.RazorPage__
 This is the ASP.NET web front end by using Razor Page to perform CRUD by calling proxy classes.
 
-## How to Google Datastore
+## How to Interact with Google Datastore (setup guide for Windows 10)
+1. Sign up to Google Cloud https://cloud.google.com. Google Datastore is one of the offerring under Google Cloud Platform.
 
-1. Create Service Account
+2. Create Service Account
+- Account name: \*droid101\* (just example)
+- Role: Datastore -> cloud datastore owner
 
-- account name: \*droid101\* (just example)
-- role: Datastore -> cloud datastore owner
-
-Download json private key file keep it in any folder.
+3. Download json private key file keep it in any folder.
 i.e C:\GCloudKey\wm-nosql-a4fcc17e9390.json
 
-2. Control Panel > System > Advanced System Settings > Environment Variables
+4. Setup environment
+a. Control Panel > System > Advanced System Settings > Environment Variables
+b. Set Variable
+c. Variable Name: GOOGLE_APPLICATION_CREDENTIALS
+d. Variable Value: C:\GCloudKey\wm-nosql-a4fcc17e9390.json
 
-Set Variable
-Variable Name: GOOGLE_APPLICATION_CREDENTIALS
-Variable Value: C:\GCloudKey\wm-nosql-a4fcc17e9390.json
+5.Restart machine (very important)
 
-restart machine (very important)
-
-3. Configure GCloud
-
+6. Configure GCloud
 Use Powershell or Command Prompt of Windows.
 - gcloud config list (View current logged in accounts and default project in Google cloud)
 - gcloud auth login (Sign In to a Google account)
 - gcloud config set account \*google account email\*
 - gcloud config set project \*project name\*
 
-4. Create Indexes and Deploy
+## Datastore Indexes management
 
-Powershell
-> gcloud app deploy "C:\Users\user\Documents\visual studio 2017\Projects\WMNoSQL\WmNosql.Proxy\index.yaml"
+Without Indexes, you almost won't be able to query data from Google Datastore. So learn about Index of Datastore here.
+https://cloud.google.com/datastore/docs/concepts/indexes
+
+1. Create Indexes and Deploy
+Powershell or Command Prompt
+> gcloud app deploy "C:\Users\user\Documents\Projects\WMNoSQL\WmNosql.Proxy\index.yaml"
 OR
-> gcloud datastore create-indexes C:\Users\user\Documents\visual studio 2017\Projects\WMNoSQL\WmNosql.Proxy\index.yaml
+> gcloud datastore create-indexes C:\Users\user\Documents\Projects\WMNoSQL\WmNosql.Proxy\index.yaml
 
-    
-If Delete Indexes
-
-Powershell
+If you were to delete Indexes
+Powershell or Command Prompt
 > gcloud datastore cleanup-indexes "C:\Users\user\Documents\visual studio 2017\Projects\WMNoSQL\WmNosql.Proxy\index.yaml"
